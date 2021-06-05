@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj": {}
+    "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj": {
+    "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
+        "projectUniqueName": "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
         "projectName": "GameOfWar",
-        "projectPath": "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
-        "packagesPath": "C:\\Users\\JasonsGamingPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\obj\\",
+        "projectPath": "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
+        "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\JasonsGamingPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
