@@ -11,14 +11,10 @@ public class Card
 		this.Suit = Suit;
 		this.Name = Name;
 	}
-	
+
 	public int getValue()
-    {
-		return Value;
-    }
-	protected string getSuit()
 	{
-		return Suit;
+		return Value;
 	}
 	public string getName()
 	{
