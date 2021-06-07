@@ -7,18 +7,23 @@ public class Deck
 	private Queue<Card> Cards = new Queue<Card>();
 	public Deck()
 	{
-		string[] suits = {"Hearts", "Clubs", "Diamonds", "Spades" };
-		foreach(string suit in suits)
-		{ 
+		
+	}
+
+	public void populateDeck()
+    {
+		string[] suits = { "Hearts", "Clubs", "Diamonds", "Spades" };
+		foreach (string suit in suits)
+		{
 			for (int i = 2; i < 15; i++)
 			{
 				string valueForString = i.ToString();
-				if(i > 10)
-                {
-					if(i == 11)
-                    {
+				if (i > 10)
+				{
+					if (i == 11)
+					{
 						valueForString = "Jack";
-                    }
+					}
 					if (i == 12)
 					{
 						valueForString = "Queen";
@@ -37,7 +42,6 @@ public class Deck
 		}
 		ShuffleDeck();
 	}
-
 	public Queue<Card> getDeck()
     {
 		return Cards;
@@ -53,9 +57,14 @@ public class Deck
 		return Cards.Count;
     }
 
+	public string getNameOfFirstCard()
+    {
+		return Cards.Peek().getName();
+    }
+
 	public int getValueOfFirstCard()
     {
-		return Cards.Dequeue().getValue();
+		return Cards.Peek().getValue();
     }
 
 	public void ShuffleDeck()

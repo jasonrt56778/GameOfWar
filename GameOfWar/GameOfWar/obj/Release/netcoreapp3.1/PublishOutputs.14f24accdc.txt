@@ -1,0 +1,5 @@
+C:\Users\Jason\Desktop\GameOfWar.exe
+C:\Users\Jason\Desktop\GameOfWar.dll
+C:\Users\Jason\Desktop\GameOfWar.deps.json
+C:\Users\Jason\Desktop\GameOfWar.runtimeconfig.json
+C:\Users\Jason\Desktop\GameOfWar.pdb
