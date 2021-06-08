@@ -1,0 +1,12 @@
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.exe
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.deps.json
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.runtimeconfig.json
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.runtimeconfig.dev.json
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.dll
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\bin\Release\netcoreapp3.1\GameOfWar.pdb
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.AssemblyInfoInputs.cache
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.AssemblyInfo.cs
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.csproj.CoreCompileInputs.cache
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.dll
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.pdb
+C:\Users\JasonsGamingPC\Documents\DeacomHomework\GameOfWar\GameOfWar\GameOfWar\obj\Release\netcoreapp3.1\GameOfWar.genruntimeconfig.cache
