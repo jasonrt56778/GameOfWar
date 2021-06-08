@@ -11,7 +11,7 @@ public class Card
 	private int _value;
 	public int GetValue
 	{
-        get { return _value; }
+		get { return _value; }
 	}
 
 	private string _name;

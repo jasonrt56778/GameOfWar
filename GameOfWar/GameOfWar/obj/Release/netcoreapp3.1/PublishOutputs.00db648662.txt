@@ -1,5 +1,0 @@
-C:\Users\Jason\Documents\GitHub\GameOfWar.exe
-C:\Users\Jason\Documents\GitHub\GameOfWar.dll
-C:\Users\Jason\Documents\GitHub\GameOfWar.deps.json
-C:\Users\Jason\Documents\GitHub\GameOfWar.runtimeconfig.json
-C:\Users\Jason\Documents\GitHub\GameOfWar.pdb
