@@ -9,14 +9,14 @@ public class Card
 	}
 
 	private int _value;
-	public int getValue
+	public int GetValue
 	{
         get { return _value; }
         set { _value = value; }
 	}
 
 	private string _name;
-	public string getName
+	public string GetName
 	{
 		get { return _name; }
         set { _name = value; }

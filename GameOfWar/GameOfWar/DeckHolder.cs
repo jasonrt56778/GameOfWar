@@ -4,7 +4,7 @@ using System.Linq;
 
 public class DeckHolder
 {
-	public void populateDeck()
+	public void PopulateDeck()
     {
 		string[] suits = { "Hearts", "Clubs", "Diamonds", "Spades" };
 		for (int i = 2; i < 15; i++)
@@ -40,19 +40,20 @@ public class DeckHolder
         set { _deck = value; }
     }
 
-	public int deckCount()
+	//maybe make these into properties
+	public int DeckCount()
     {
 		return _deck.Count;
     }
 
-	public string firstCardName()
+	public string FirstCardName()
     {
-		return _deck.Peek().getName;
+		return _deck.Peek().GetName;
     }
 
-	public int firstCardValue()
+	public int FirstCardValue()
     {
-		return _deck.Peek().getValue;
+		return _deck.Peek().GetValue;
     }
 
 	private Random rng = new Random();
