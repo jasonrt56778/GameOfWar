@@ -10,14 +10,4 @@ public class Player
 		this.name = name;
 		this.deck = deck;
 	}
-
-	public int getFirstCard()
-    {
-		return deck.firstCardValue();
-    }
-
-	public string getName()
-    {
-		return name;
-    }
 }
