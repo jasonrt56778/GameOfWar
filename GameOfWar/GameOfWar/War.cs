@@ -6,8 +6,8 @@ namespace GameOfWar
 {
     class War
     {
-        private Deck player1Cards = new Deck();
-        private Deck player2Cards = new Deck();
+        private DeckHolder player1Cards = new DeckHolder();
+        private DeckHolder player2Cards = new DeckHolder();
         private Queue<Card> playerWarCards = new Queue<Card>();
         private Player player1;
         private Player player2;
@@ -23,38 +23,46 @@ namespace GameOfWar
 
         public void handOutCards()
         {
-            Deck newDeck = new Deck();
+            DeckHolder newDeck = new DeckHolder();
             newDeck.populateDeck();
-            Queue<Card> cards = newDeck.getDeck();
+            Queue<Card> cards = newDeck.Deck;
             for(int i = 0; i < 26; i++)
             {
-                player1Cards.getDeck().Enqueue(cards.Dequeue());
-                player2Cards.getDeck().Enqueue(cards.Dequeue());
+                player1Cards.Deck.Enqueue(cards.Dequeue());
+                player2Cards.Deck.Enqueue(cards.Dequeue());
             }
+        }
+
+        //change the player name stuff and add params
+        private void tieGameWinner()
+        {
+            Console.WriteLine("Giving all cards to " + player1Name + " since " + player2Name + " ran out during war.");
+            while (player2Cards.deckCount() > 0)
+            {
+                player1Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
+            }
+            int playerWarCardsLength = playerWarCards.Count;
+            for (int j = 0; j < playerWarCardsLength; j++)
+            {
+                player1Cards.Deck.Enqueue(playerWarCards.Dequeue());
+            }
+            Console.WriteLine("Game Ending");
         }
 
         private bool tieGame()
         {
-            Console.WriteLine(player1Name + ": " + player1Cards.getNameOfFirstCard());
-            Console.WriteLine(player2Name + ": " + player2Cards.getNameOfFirstCard());
-            Console.WriteLine(player1Cards.getNameOfFirstCard() + " ties with " + player2Cards.getNameOfFirstCard());
+            Console.WriteLine(player1Name + ": " + player1Cards.firstCardName());
+            Console.WriteLine(player2Name + ": " + player2Cards.firstCardName());
+            Console.WriteLine(player1Cards.firstCardName() + " ties with " + player2Cards.firstCardName());
             Console.WriteLine("WAR");
             Console.WriteLine("1...");
             Console.WriteLine("2...");
             Console.WriteLine("3...");
+
+            //make these into methods by themselves
             if (player2Cards.deckCount() < 4)
             {
-                Console.WriteLine("Giving all cards to " + player1Name + " since " + player2Name + " ran out during war.");
-                while(player2Cards.deckCount() > 0)
-                {
-                    player1Cards.getDeck().Enqueue(player2Cards.getDeck().Dequeue());
-                }
-                int playerWarCardsLength = playerWarCards.Count;
-                for (int j = 0; j < playerWarCardsLength; j++)
-                {
-                    player1Cards.getDeck().Enqueue(playerWarCards.Dequeue());
-                }
-                Console.WriteLine("Game Ending");
+                tieGameWinner();
                 return true;
             }
             else if(player1Cards.deckCount() < 4)
@@ -62,49 +70,50 @@ namespace GameOfWar
                 Console.WriteLine("Giving all cards to " + player2Name + " since " + player1Name + " ran out during war.");
                 while (player1Cards.deckCount() > 0)
                 {
-                    player2Cards.getDeck().Enqueue(player1Cards.getDeck().Dequeue());
+                    player2Cards.Deck.Enqueue(player1Cards.Deck.Dequeue());
                 }
                 int playerWarCardsLength = playerWarCards.Count;
                 for (int j = 0; j < playerWarCardsLength; j++)
                 {
-                    player2Cards.getDeck().Enqueue(playerWarCards.Dequeue());
+                    player2Cards.Deck.Enqueue(playerWarCards.Dequeue());
                 }
                 Console.WriteLine("Game Ending");
                 return true;
             }
             else
             {
+                //burn three cards
                 for (int i = 0; i < 3; i++)
                 {
-                    playerWarCards.Enqueue(player1Cards.getDeck().Dequeue());
-                    playerWarCards.Enqueue(player2Cards.getDeck().Dequeue());
+                    playerWarCards.Enqueue(player1Cards.Deck.Dequeue());
+                    playerWarCards.Enqueue(player2Cards.Deck.Dequeue());
                 }
-                int player1Value = player1Cards.getValueOfFirstCard();
-                int player2Value = player2Cards.getValueOfFirstCard();
+                int player1Value = player1Cards.firstCardValue();
+                int player2Value = player2Cards.firstCardValue();
                 if (player1Value > player2Value)
                 {
-                    Console.WriteLine(player1Name + ": " + player1Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Name + ": " + player2Cards.getNameOfFirstCard());
-                    Console.WriteLine(player1Cards.getNameOfFirstCard() + " beats " + player2Cards.getNameOfFirstCard() + "\n");
-                    player1Cards.getDeck().Enqueue(player1Cards.getDeck().Dequeue());
-                    player1Cards.getDeck().Enqueue(player2Cards.getDeck().Dequeue());
+                    Console.WriteLine(player1Name + ": " + player1Cards.firstCardName());
+                    Console.WriteLine(player2Name + ": " + player2Cards.firstCardName());
+                    Console.WriteLine(player1Cards.firstCardName() + " beats " + player2Cards.firstCardName() + "\n");
+                    player1Cards.Deck.Enqueue(player1Cards.Deck.Dequeue());
+                    player1Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
                     int playerWarCardsLength = playerWarCards.Count;
                     for (int j = 0; j < playerWarCardsLength; j++)
                     {
-                        player1Cards.getDeck().Enqueue(playerWarCards.Dequeue());
+                        player1Cards.Deck.Enqueue(playerWarCards.Dequeue());
                     }
                 }
                 else if(player1Value < player2Value)
                 {
-                    Console.WriteLine(player1Name + ": " + player1Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Name + ": " + player2Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Cards.getNameOfFirstCard() + " beats " + player1Cards.getNameOfFirstCard() + "\n");
-                    player2Cards.getDeck().Enqueue(player2Cards.getDeck().Dequeue());
-                    player2Cards.getDeck().Enqueue(player1Cards.getDeck().Dequeue());
+                    Console.WriteLine(player1Name + ": " + player1Cards.firstCardName());
+                    Console.WriteLine(player2Name + ": " + player2Cards.firstCardName());
+                    Console.WriteLine(player2Cards.firstCardName() + " beats " + player1Cards.firstCardName() + "\n");
+                    player2Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
+                    player2Cards.Deck.Enqueue(player1Cards.Deck.Dequeue());
                     int playerWarCardsLength = playerWarCards.Count;
                     for (int j = 0; j < playerWarCardsLength; j++)
                     {
-                        player2Cards.getDeck().Enqueue(playerWarCards.Dequeue());
+                        player2Cards.Deck.Enqueue(playerWarCards.Dequeue());
                     }
                 }
                 else
@@ -196,23 +205,23 @@ namespace GameOfWar
             {
                 roundCounter++;
                 Console.WriteLine("Round " + roundCounter);
-                int player1Card = player1Cards.getValueOfFirstCard();
-                int player2Card = player2Cards.getValueOfFirstCard();
+                int player1Card = player1Cards.firstCardValue();
+                int player2Card = player2Cards.firstCardValue();
                 if (player1Card > player2Card)
                 {
-                    Console.WriteLine(player1Name + ": " + player1Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Name + ": " + player2Cards.getNameOfFirstCard());
-                    Console.WriteLine(player1Cards.getNameOfFirstCard() + " beats " + player2Cards.getNameOfFirstCard() + "\n");
-                    player1Cards.getDeck().Enqueue(player1Cards.getDeck().Dequeue());
-                    player1Cards.getDeck().Enqueue(player2Cards.getDeck().Dequeue());
+                    Console.WriteLine(player1Name + ": " + player1Cards.firstCardName());
+                    Console.WriteLine(player2Name + ": " + player2Cards.firstCardName());
+                    Console.WriteLine(player1Cards.firstCardName() + " beats " + player2Cards.firstCardName() + "\n");
+                    player1Cards.Deck.Enqueue(player1Cards.Deck.Dequeue());
+                    player1Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
                 }
                 else if (player1Card < player2Card)
                 {
-                    Console.WriteLine(player1Name + ": " + player1Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Name + ": " + player2Cards.getNameOfFirstCard());
-                    Console.WriteLine(player2Cards.getNameOfFirstCard() + " beats " + player1Cards.getNameOfFirstCard() + "\n");
-                    player2Cards.getDeck().Enqueue(player2Cards.getDeck().Dequeue());
-                    player2Cards.getDeck().Enqueue(player1Cards.getDeck().Dequeue());
+                    Console.WriteLine(player1Name + ": " + player1Cards.firstCardName());
+                    Console.WriteLine(player2Name + ": " + player2Cards.firstCardName());
+                    Console.WriteLine(player2Cards.firstCardName() + " beats " + player1Cards.firstCardName() + "\n");
+                    player2Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
+                    player2Cards.Deck.Enqueue(player1Cards.Deck.Dequeue());
                 }
                 else
                 {

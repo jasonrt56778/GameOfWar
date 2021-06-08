@@ -2,22 +2,23 @@
 
 public class Card
 {
-	private int Value;
-	private string Suit;
-	private string Name;
-	public Card(int Value, string Suit, string Name)
+	public Card(int Value, string Name)
 	{
-		this.Value = Value;
-		this.Suit = Suit;
-		this.Name = Name;
+		_value = Value;
+		_name = Name;
 	}
 
-	public int getValue()
+	private int _value;
+	public int getValue
 	{
-		return Value;
+        get { return _value; }
+        set { _value = value; }
 	}
-	public string getName()
+
+	private string _name;
+	public string getName
 	{
-		return Name;
+		get { return _name; }
+        set { _name = value; }
 	}
 }

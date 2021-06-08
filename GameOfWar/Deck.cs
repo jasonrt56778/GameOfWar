@@ -13,35 +13,33 @@ public class Deck
 	public void populateDeck()
     {
 		string[] suits = { "Hearts", "Clubs", "Diamonds", "Spades" };
-		foreach (string suit in suits)
+		for (int i = 2; i < 15; i++)
 		{
-			for (int i = 2; i < 15; i++)
-			{
-				string valueForString = i.ToString();
-				if (i > 10)
-				{
-					if (i == 11)
-					{
-						valueForString = "Jack";
-					}
-					if (i == 12)
-					{
-						valueForString = "Queen";
-					}
-					if (i == 13)
-					{
-						valueForString = "King";
-					}
-					if (i == 14)
-					{
-						valueForString = "Ace";
-					}
-				}
-				Cards.Enqueue(new Card(i, suit.ToString(), valueForString + " of " + suit));
+			string valueForString = i.ToString();
+			switch(i)
+            {
+				case 11:
+					valueForString = "Jack";
+					break;
+				case 12:
+					valueForString = "Queen";
+					break;
+				case 13:
+					valueForString = "King";
+					break;
+				case 14:
+					valueForString = "Ace";
+					break;
 			}
+			Cards.Enqueue(new Card(i, valueForString + " of " + suits[0]));
+			Cards.Enqueue(new Card(i, valueForString + " of " + suits[1]));
+			Cards.Enqueue(new Card(i, valueForString + " of " + suits[2]));
+			Cards.Enqueue(new Card(i, valueForString + " of " + suits[3]));
 		}
 		ShuffleDeck();
 	}
+
+	//rename things to make more sense
 	public Queue<Card> getDeck()
     {
 		return Cards;
@@ -59,21 +57,21 @@ public class Deck
 
 	public string getNameOfFirstCard()
     {
-		return Cards.Peek().getName();
+		return Cards.Peek().getName;
     }
 
 	public int getValueOfFirstCard()
     {
-		return Cards.Peek().getValue();
+		return Cards.Peek().getValue;
     }
 
 	public void ShuffleDeck()
     {
 		List<Card> newCards = Cards.ToList();
 		List<Card> secondList = new List<Card>();
-		for(int i = 52; i > 0; i--)
+		System.Random random = new System.Random();
+		for (int i = 52; i > 0; i--)
         {
-			System.Random random = new System.Random();
 			int randomNum = random.Next(i);
 			secondList.Add(newCards[randomNum]);
 			newCards.RemoveAt(randomNum);

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 public class Player
 {
 	private string name;
-	private Deck deck;
-	public Player(string name, Deck deck)
+	private DeckHolder deck;
+	public Player(string name, DeckHolder deck)
 	{
 		this.name = name;
 		this.deck = deck;
@@ -13,7 +13,7 @@ public class Player
 
 	public int getFirstCard()
     {
-		return deck.getValueOfFirstCard();
+		return deck.firstCardValue();
     }
 
 	public string getName()
