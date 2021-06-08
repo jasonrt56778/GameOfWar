@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Z1FBS+gri81i6Uuc5QwPvpCaTvJEWrcIP+1BwATjp1C6/tExOwrcGjJqrJhUBhgHQ1LI0RHh1UA8GlcpnkATPQ==",
+  "dgSpecHash": "2jv2R1b15B4ad9DbZWkKdO4Vy2kI4sa3Gb1uJrMdi/mQhY/XKRWVUFDBx5T9lV4ZZ9Tum7rFkPrp4BrokjfljQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jason\\Documents\\GitHub\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\JasonsGamingPC\\Documents\\DeacomHomework\\GameOfWar\\GameOfWar\\GameOfWar\\GameOfWar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JasonsGamingPC\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.15\\microsoft.netcore.app.runtime.win-x86.3.1.15.nupkg.sha512",
+    "C:\\Users\\JasonsGamingPC\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.15\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.15.nupkg.sha512",
+    "C:\\Users\\JasonsGamingPC\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.15\\microsoft.aspnetcore.app.runtime.win-x86.3.1.15.nupkg.sha512"
+  ],
   "logs": []
 }

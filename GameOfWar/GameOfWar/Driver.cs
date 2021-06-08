@@ -10,6 +10,8 @@ namespace GameOfWar
         {
             GameOfWar game = new GameOfWar();
             game.Play();
+            Console.Write("Press any key to exit command prompt.");
+            Console.ReadKey();
         }
     }
 }

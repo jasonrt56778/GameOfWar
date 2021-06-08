@@ -29,7 +29,7 @@ namespace GameOfWar
         private void EndGameForTie(string winnerName, string loserName)
         {
             Console.WriteLine("Giving all cards to " + winnerName + " since " + loserName + " ran out during war.");
-            while (player2Cards.DeckCount() > 0)
+            while (player2Cards.DeckCount > 0)
             {
                 player1Cards.Deck.Enqueue(player2Cards.Deck.Dequeue());
             }
@@ -60,7 +60,7 @@ namespace GameOfWar
         private void PromptUserWarRules()
         {
             bool warRulesFlag = true;
-            Console.WriteLine("Do you want to have WAR consist of putting down 1 card then\nflipping or putting down 3 cards then flipping(1/3): ");
+            Console.Write("Do you want to have WAR consist of putting down 1 card then\nflipping or putting down 3 cards then flipping(1/3): ");
             while (warRulesFlag)
             {
                 string defaultInput = Console.ReadLine();
@@ -84,14 +84,14 @@ namespace GameOfWar
 
         private void PrintOutWinner(DeckHolder winnerDeck, DeckHolder loserDeck)
         {
-            Console.WriteLine(player1Name + ": " + player1Cards.FirstCardName());
-            Console.WriteLine(player2Name + ": " + player2Cards.FirstCardName());
-            Console.WriteLine(winnerDeck.FirstCardName() + " beats " + loserDeck.FirstCardName() + "\n");
+            Console.WriteLine(player1Name + ": " + player1Cards.FirstCardName);
+            Console.WriteLine(player2Name + ": " + player2Cards.FirstCardName);
+            Console.WriteLine(winnerDeck.FirstCardName + " beats " + loserDeck.FirstCardName + "\n");
         }
         private void PrintOutCards()
         {
-            Console.WriteLine(player1Name + ": " + player1Cards.FirstCardName());
-            Console.WriteLine(player2Name + ": " + player2Cards.FirstCardName());
+            Console.WriteLine(player1Name + ": " + player1Cards.FirstCardName);
+            Console.WriteLine(player2Name + ": " + player2Cards.FirstCardName);
         }
 
         private void GiveFirstPlayerSecondsCards()
@@ -139,14 +139,14 @@ namespace GameOfWar
         private bool TieGame()
         {
             PrintOutCards();
-            Console.WriteLine(player1Cards.FirstCardName() + " ties with " + player2Cards.FirstCardName());
+            Console.WriteLine(player1Cards.FirstCardName + " ties with " + player2Cards.FirstCardName);
             Console.WriteLine("WAR");
-            if (player2Cards.DeckCount() < 4)
+            if (player2Cards.DeckCount < 4)
             {
                 EndGameForTie(player1Name, player2Name);
                 return true;
             }
-            else if(player1Cards.DeckCount() < 4)
+            else if(player1Cards.DeckCount < 4)
             {
                 EndGameForTie(player2Name, player1Name);
                 return true;
@@ -165,8 +165,8 @@ namespace GameOfWar
                     Console.WriteLine("1...");
                     BurnOneCard();
                 }
-                int player1Value = player1Cards.FirstCardValue();
-                int player2Value = player2Cards.FirstCardValue();
+                int player1Value = player1Cards.FirstCardValue;
+                int player2Value = player2Cards.FirstCardValue;
                 if(player1Value == player2Value)
                 {
                     roundCounter++;
@@ -270,20 +270,20 @@ namespace GameOfWar
 
         private void PrintEndGameScore(string winnerName)
         {
-            Console.WriteLine(player1Name + " Card Count: " + player1Cards.DeckCount());
-            Console.WriteLine(player2Name + " Card Count: " + player2Cards.DeckCount());
+            Console.WriteLine(player1Name + " Card Count: " + player1Cards.DeckCount);
+            Console.WriteLine(player2Name + " Card Count: " + player2Cards.DeckCount);
             Console.WriteLine(winnerName + " Wins");
         }
         public void Play()
         {
             PromptUserDefaultSettings();
             HandOutCards();
-            while (player1Cards.DeckCount() > 0 && player2Cards.DeckCount() > 0 && roundCounter < rounds)
+            while (player1Cards.DeckCount > 0 && player2Cards.DeckCount > 0 && roundCounter < rounds)
             {
                 roundCounter++;
                 Console.WriteLine("Round " + roundCounter);
-                int player1Value = player1Cards.FirstCardValue();
-                int player2Value = player2Cards.FirstCardValue();
+                int player1Value = player1Cards.FirstCardValue;
+                int player2Value = player2Cards.FirstCardValue;
                 if (player1Value == player2Value)
                 {
                     if (TieGame())
@@ -304,7 +304,7 @@ namespace GameOfWar
                 else
                     Console.WriteLine("We're at " + rounds + " turns... probably time to end the game.");
             }
-            if(player1Cards.DeckCount() > player2Cards.DeckCount())
+            if(player1Cards.DeckCount > player2Cards.DeckCount)
             {
                 PrintEndGameScore(player1Name);
             }

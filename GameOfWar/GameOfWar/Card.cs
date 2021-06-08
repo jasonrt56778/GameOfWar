@@ -12,13 +12,11 @@ public class Card
 	public int GetValue
 	{
         get { return _value; }
-        set { _value = value; }
 	}
 
 	private string _name;
 	public string GetName
 	{
 		get { return _name; }
-        set { _name = value; }
 	}
 }

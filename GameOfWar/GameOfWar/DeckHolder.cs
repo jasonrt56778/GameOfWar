@@ -41,19 +41,19 @@ public class DeckHolder
     }
 
 	//maybe make these into properties
-	public int DeckCount()
+	public int DeckCount
     {
-		return _deck.Count;
+		get { return _deck.Count; }
     }
 
-	public string FirstCardName()
+	public string FirstCardName
     {
-		return _deck.Peek().GetName;
+		get { return _deck.Peek().GetName; }
     }
 
-	public int FirstCardValue()
+	public int FirstCardValue
     {
-		return _deck.Peek().GetValue;
+		get { return _deck.Peek().GetValue; }
     }
 
 	private Random rng = new Random();
